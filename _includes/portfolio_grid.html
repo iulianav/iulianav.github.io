@@ -1,0 +1,37 @@
+<!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Data Story</h2><br>
+                    <h4 class="section-subheading">Dataset<br> <br> </h4>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                    <div class="text-corpus" align="justify">We decided to use the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections dataset</a> provided by the <a href="https://data.cityofchicago.org">City of Chicago Open Data platform</a>. It is a relatively small .csv dataset (only 220 MB) which contains details about food establishments inspections carried out in the city of Chicago from 01.01.2010 onward. It provides useful information about various aspects of the inspections such as: facility type, violation type, inspection type, risk category or location. The fields are for the most part straightforward.
+
+                    The only column that needs extra processing is the “Violations” column. It stores the encountered violations as free text comprising: the violation code and title followed by comments. The challenge here is to parse the contents of this column using natural language processing techniques in order to identify key words in the comments that can be used to discover new patterns and trends. Moreover, some columns must be discarded because they contain either redundant or useless information. For example, the “Latitude” and “Longitude” columns are to be discarded because the “Location” column already contains this information. Similarly, the City and State columns must be discarded since the inspections only occurred in Chicago.
+                    
+                    Another hurdle in managing the data is the fact that on 7/1/2018, the Chicago Department of Public Health’s Food Protection unit changed its definition of violations. Thus, we will have to conduct extensive research about the violation types, how they changed and how the old ones can be mapped to the new ones. Besides, in order to avoid artifacts of the redefinition of violation types when studying changes in long term trends, two filtered views were created: one showing inspection records through 6/30/2018 and one showing inspection records from 7/1/2018 forward. We thus may use these two filtered datasets for our study.
+                    
+                    Finally, the dataset may still contain duplicates inspection reports. Hence, we will also had to add a step in our pre-processing pipeline to account for this inconvenience.</div>
+                </div>
+            </div>
+           <!--  <div class="row">
+            {% for post in site.posts %}
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{ post.title }}</h4>
+                        <p class="text-muted">{{ post.subtitle }}</p>
+                    </div>
+                </div>
+            {% endfor %} -->
+            </div>
+        </div>
+    </section>
