@@ -4,9 +4,17 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Predictive Models</h2><br>
-                    <div class="text-corpus" align="justify">The final step we took with our project is trying to see whether we can use the data we have in order to predict whether an inspection will pass or fail. We tried 4 different approaches for this problem, however, the main difference is not in the models we used, but in how we extract the features.<br>
+                    <div class="text-corpus" align="justify">The final thing we tried to see was whether we can use the data we have in order to predict whether an inspection will pass or fail. We tried 4 different approaches for this problem, however, the main difference is not in the models we used, but in how we extract the features.<br><br>
 
-                    The approach which stood out is using <b>'Term Frequency - Inverse Document Frequency' (TF-IDF) vectorizer</b> to extract important <b>words as features</b> from the violations and comments. This is particularly suited for our dataset because it is robust to the change in violations that occurred in 2018. By training a <b>Linear Support Vector Machine</b> with these features and performing grid search to find the optimal hyperparameters, we obtained a high test accuracy of <b>96%</b>.<br><br>
+                    The approach which stood out is using <b>'Term Frequency - Inverse Document Frequency' (TF-IDF) vectorizer</b> to extract important <b>words as features</b> from the violations and comments. This is particularly suited for our dataset because it is robust to the change in violations that occurred in 2018. By training a <b>Linear Support Vector Machine</b> with these features and performing grid search to find the optimal hyperparameters, we obtained a high test accuracy of <b>96%</b>
+                    on a 40:60 test-train split of the original dataset. The following 2 maps illustrate a small subsample of the inspections.<br><br>
+
+                    The map on the left illustrates the outcomes predicted by the model on a small subsample of 1412 observations (where an accuracy of <b>98%</b> was attained), while the map on the right shows the ground truth values. Note that the value 1 corresponds to a Pass and 0 corresponds to a Fail.<br><br>
+
+                    <div class="column"><img src="img/map_pred.png" width="50%" heght="50%"><img src="img/map_truth.png" width="50%" heght="50%"></div><br><br>
+
+                    The following confusion matrix supports the results displayed above.<br><br>
+                    <div class="column"><img src="img/confusion.png" class="img-responsive img-centered" width="50%" heght="50%"><br><br>
 
                     On the other hand, the other approaches we attempted provided really good results as well. The first one consisted in converting the <b>violations to binary features</b>: 1 column corresponds to one violation and the value contained is 1 if the violation is resent in the current inspection, 0 otherwise. The limitation of this approach is that it requires us to split the dataset and train 2 different models on the first split containing the old violations and on the new split containing the new violations after 2018. By training a <b>Multilayer Perceptron</b> on the first split of the data (old violations) we obtained a test accuracy of <b>94%</b>.<br><br>
 
@@ -14,7 +22,7 @@
 
                     Last but not least, the final approach we used is also similar. The only difference is that we <b>derive some new features</b> to use together with the violations: the <b>result of the previous inspection, the number of days since the last inspection and the number of violations</b>. Once again we trained an <b>MLP</b> and obtained a test accuracy of <b>93%</b>. This was obtained with <b>multiclass labeling</b>.<br><br>
 
-                    The conclusion is that, in order to optimize a final predictive model, we should combine all the advantages of the previous models.</div><br>
+                    The conclusion we arrived at is that, in order to optimize a final predictive model, we should combine all the advantages of the previous models. Moreover, it is indeed possible to predict which food establishments are likely to fail an inspection. This is great news, given that our most important goal was to discover whether such predictive models can be trained on the Chicago Food Inspections data set in order to aid the relatively few inspectors to more effectively and efficiently locate the facilities that truly pose a threat to the Public Health.</div><br>
 
                     
                 </div>

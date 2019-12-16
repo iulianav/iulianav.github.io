@@ -40,7 +40,9 @@
                     <div class="text-corpus" align="justify">
                         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/21.embed" height="525" width="100%"></iframe><br>
 
-                        Despite the concerning number of high risk food establishments, fortunately most of them pass the inspections. This might lead us to conlcude that both the situation is not as grim as it seems at a first look, but also that it takes a long period of time until the inspectors come across the facilities that are a critical threat to the public health.
+                        Despite the concerning number of high risk food establishments, most of them pass the inspections. This might lead us to conlcude that both the situation is not as grim as it seems at a first look, but also that it takes a long period of time until the inspectors come across the facilities that are a critical threat to the public health.<br><br>
+
+                        The results so far also showed us that, althoug most food establishments are categorised as having 'High Risk', a much larger proportion of the inspections pass rather than fail. To make matters worse, it seems that most inspections are of type 'Canvass' or 'License', and only a small percetage are based on complaints which means that the consumers are unware of the standards the establishments should meet, their own safety or, even worse, the establishments themselves hide their issues very well.
                         <br>
 
                     </div><br>
@@ -74,7 +76,7 @@
                         <br>
                         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/32.embed" height="525" width="100%"></iframe><br>
 
-                        We identified 3 categories of violations based on the clustering done above:
+                        We identified 3 categories of violations based on the clustering done above:<br><br>
 
                         Those violations which do not concern food directly and are not a direct threat to people's health. They mostly concern:
                             <ul>
@@ -112,7 +114,9 @@
 
                         For the second part of the data set, the clustering is less obvious: we observed a serous decay in the proportion of passed violations. We tried to cluster the violations in 2, 3 and 4 clusters, but there is always a cluster containing only 2 violations. Therefore, we decided to stick with 2 clusters.<br>
 
-                        We identified the same patterns as before, the most critical violations include real dangers to the customers' health: presence of rodents (38), handling of toxic substances (28), temperature control (33), water source (31), cooking conditions (34).<br>
+                        We identified the same patterns as before, the most critical violations include real dangers to the customers' health: presence of rodents (38), handling of toxic substances (28), temperature control (33), water source (31), cooking conditions (34).<br><br>
+
+                        By shedding light on how the different violations can be classfied in different categories (Minor, Severe and Critical), and how they contribute to the result of an inspection, we were able to use this information later on to build our models and perform meaningful feature extraction.
 
                     </div><br>
 
@@ -121,7 +125,10 @@
                     <div class="text-corpus" align="justify">
                         As the data file contains the latitude and longitude for a large majority of the facilities inspected, we wanted to analyse the localisation of the different risk levels.<br>
 
-                        <img src="img/map.png" class="img-responsive img-centered" width="80%" height="80%"><br>
+                        <!-- <iframe src='../img/map.html' width=100% height=800px></iframe><br><br> -->
+                        <img src="img/map.png" class="img-responsive img-centered" width="100%" heght="100%">
+
+
 
                         The map above shows that food establishments with low and medium risk tend to cluster together, especially towards the central parts of the city. This indicates perhaps establishments located in richer areas, which naturally will have more funds to allow for maintaining a better quality of the overall services and locations which they provide.<br>
 
@@ -130,9 +137,10 @@
                     <h4 class="section-subheading">How do the inspections outcomes results vary over the years?<br> <br> </h4><br>
 
                     <div class="text-corpus" align="justify">
-                        We also enquired whether there exist significant changes over the years in the distribution of inspections results.<br>
+                        We also enquired whether there exist significant changes over the years in the distribution of inspections results.<br><br>
 
-                        ** INSERT FIGURE **<br>
+                        ** INSERT FIGURE **<br><br>
+
                         
                         A change in the results occurs between 2017 and 2018: less Pass and more Pass with conditions. It is linked to the change in the violations code in July 2018, and the inspections seem to have also become stricter since then.<br>
 
@@ -141,11 +149,13 @@
                     <h4 class="section-subheading">Are there any seasonal patterns affecting the inspections outcomes?<br> <br> </h4><br>
 
                     <div class="text-corpus" align="justify">
-                        We then wondered if there exist seasonal patterns in our data, for instance, if we have a change in the proportion of Passed / Failed inspections during certain months of the year.<br>
+                        We then wondered if there exist seasonal patterns in our data, for instance, if we have a change in the proportion of Passed / Failed inspections during certain months of the year.<br><br>
 
-                        ** INSERT FIGURE **<br>
+                        ** INSERT FIGURE **<br><br>
                         
-                        The plot above, even though simple, illsutrates there is seasonality in the months of July, August and September. More precisely, during these months it seems that the average percentage of Pass inspections (over all years) decreases while the Fail increases. In retrospective this is reasonable, as the hot summer months tend to make it more difficult to store meat and other animal-derived incredients, avoid rodents and insects, as well as maintain a comfotable temperature for the customers. Note that we considered both Pass and Pass w/ Conditions to be a Pass.<br>
+                        The plot above, even though simple, illsutrates there is seasonality in the months of July, August and September. More precisely, during these months it seems that the average percentage of "Pass" inspections (over all years) decreases while the "Fail" increases. In retrospective this is reasonable, as the hot summer months tend to make it more difficult to store meat and other animal-derived incredients, avoid rodents and insects, as well as maintain a comfortable temperature for the customers. Note that we considered both "Pass" and "Pass w/ Conditions" to be a "Pass".<br><br>
+
+                        Overall, our analysis so far revealed that inspections seem to get stricter after 2017, with a higher proportion of "Passed with conditions" than "Pass"inspections. The main reason is that the violations codes changed in July 2018, thus implying a change in the way inspections are performed. If we take a look at the evolution of the results over the months, there is a clear increase in the "Fail" inspections proportion during summer: the risk of having temperature issues with the food, disfunctional thermostats or infestations (rodents, insects) is higher. Since these violations usually make inspections fail, it is normal to observe this increase.<br>
 
                     </div><br>
             </div>
