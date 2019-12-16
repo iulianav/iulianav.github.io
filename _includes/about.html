@@ -3,78 +3,169 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
+                    <h2 class="section-heading">Data Story</h2><br>
+                    <div class="text-corpus" align="justify">We are focused on identifying those factors that affect and can be used to predict which food establishments may be at risk of spreading foodborn illness. This advanced analysis can aid the relatively small number of inspctors to target efficiently and effectively the occurence of critical violations, a task which is a top public healthp riority.</div><br>
+
+                    <h4 class="section-subheading">What is the proportion of high risk food establishments?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify"><!-- 
+                        First, we started with some basic analysis of our most relevant features in the dataset by looking at their distributions.<br> -->
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/17.embed" height="525" width="100%%" margin="auto"></iframe><br>
+
+                        Surprisingly, most facilities are high risk establishments and very few of them are low risk ones. The proportion of medium risk establishments is also fairly low. This finding supports further the need for advanced analysis and predictive methods for indentifying the most dangerous facilities, as it is highly difficult to pinpoint them among the majority of high risk establishemnts.<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">What are the most inspected facility types??<br> <br> </h4>
+
+                    <div class="text-corpus" align="justify">
+
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/10.embed" height="525" width="100%"></iframe><br>
+
+                        It seems that restaurants, grocery stores and schools are the most inspected facility types.<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">What is the most frequent inspection type?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/12.embed" height="525" width="100%"></iframe><br>
+
+                        The most common type of inspection is <b>Canvass</b> which is performed at a frequency relative to the risk of the establishment as explained in the Inspection type description. The second most common type of inspection is <b>Complain</b> and it should be interesting to know if these types of inspection are more likely to fail. <b>License</b> inspection are also frequent, done as a requirement for the establishment in order to receive its license to operate since many new food establishments open up in Chicago each year. Finally, inspections for <b>Suspected Food Poisoning</b> (in response to one or more persons claiming to have gotten ill as a result of eating at the establishment), <b>Tag-Removal</b> inspections (inspection of a bar or tavern) and <b>Consultation</b> (when the inspection is done at the request of the owner prior to the opening of the establishment) do not occur really often. Moreover, <b>Re-Inspections</b> can occur for most types of inspections and are indicated as such.<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">What proportion of the inspections pass?<br><br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/21.embed" height="525" width="100%"></iframe><br>
+
+                        Despite the concerning number of high risk food establishments, fortunately most of them pass the inspections. This might lead us to conlcude that both the situation is not as grim as it seems at a first look, but also that it takes a long period of time until the inspectors come across the facilities that are a critical threat to the public health.
+                        <br>
+
+                    </div><br>
+
+
+                    <h4 class="section-subheading">How safe is your favourite chain restaurant/fast-food?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        We thought it would be interesting to obtain more insights on chain restaurants/fast-foods inspections since these establishments are supposed to run by stricter rules and to be particularly careful regarding their inspections since a bad report could jeopardize the whole chain. We first decided to select the top 9 chain restaurants. In order to do so, we selected the restaurants which have more than 20 establishments under the same DBA name across the city. We then plotted the evolution of the mean risk troughout the years.
+                        <br>
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/23.embed" height="525" width="100%"></iframe><br>
+
+                        Surprisingly, although 4 out of the top 9 chain restaurants have a medium risk, the other 5 have a high risk and none have a low risk. However, having a high risk doesn't mean that the inspection will fail. So next we decided to look more into how the number of violations influences the result of an inspection.
+                    </div><br>
+
+                    <h4 class="section-subheading">What is the effect of the number of violations on the inspection's outcome?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        For the data set, we only look at the 3 most relevant categories regarding the Results: <b>Fail</b>, <b>Pass</b> and <b>Pass with conditions</b>. We plotted the boxplots corresponding to those 3 categories representing the number of violations. Unsurprisingly, the failed inspections were the ones with the most violations. An establishment with more violations is thus most likely to fail the inspection.<br>
+                        Nevertheless, we can observe some outliers on the boxplots: some facilities with a high number of violations still passed the inspection. One explanation for this is that some violations are more critical than others and are more likely to make an inspection fail. Furthermore, the result is determined by a combination of several violations, and not by the cumulated independent effect of each violation. Finally, the severity of a violation varies from an inspection to another     : one facility may have not fulfilled several aspects of the violation.
+                        <br>
+                        <img src="img/boxplot.png" class="img-responsive img-centered"><br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">What are the differences between violations in terms of severity?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        We applied a clustering method to our violations in order to see if we can highlight different categories of violations, from least to most severe. For this, we chose KMeans as clustering method. Moreover, because the violations changed on 7/1/2018, we had to separate our data set in two different ones, according to this date.<br>
+                        First, we perform clustering on the inspections performed up to 7/1/2018.
+                        <br>
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/32.embed" height="525" width="100%"></iframe><br>
+
+                        We identified 3 categories of violations based on the clustering done above:
+
+                        Those violations which do not concern food directly and are not a direct threat to people's health. They mostly concern:
+                            <ul>
+                                <li>The premises: floor, ceiling, ventilation, toilets.</li>
+                                <li>Acces to only authorized personnel in the food area.</li>
+                                <li>Cleaning, the ustensils, the different restrictions.</li>
+                            </ul>
+
+                        Those violations which have an important amount of failed and passed with conditions proportions as they can jeopardize people's health. They mostly concern:
+                            <ul>
+                                <li>The storage of the food: good temperature, thawning, labelling of the food.</li>
+                                <li>Contamination issues: toxic elements are well stored, people with infections are kept away from the food area.</li>
+                                <li>Hygienic practices.</li>
+                                <li>Presence of a food manager on site.</li>
+                                <li>Prohibition of reserving unwrapped food.</li>
+                                <li>Smoking restrictions.</li>
+                            </ul>
+
+                        These violations seriously endanger customer's health and can be at the origin of food-related illness. They concern :
+                            <ul>
+                                <li>Food protection and storage: protection from rodents, food stored at the right temperature.</li>
+                                <li>Rodent/insects/other animals infestation.</li>
+                                <li>Handling of utensils and dishes: washed, rinsed and scraped.</li>
+                                <li>Water sources: hot water, city pressure.</li>
+                            </ul><br>
+
+                        This clustering was realised based on the proportion of passed/failed/passed with conditions inspections. Our categories broadly match a classification we found on the city of <a href="https://webapps1.chicago.gov/healthinspection/Code_Violations.jsp">Chicago website</a>:<br>
+                            
+
+                        Our method to classify the violations (clustering by kNN) actually makes sense based on the website: <b>minor</b> violations have a small rate of fail and an important proportion of pass (our first cluster), <b>severe</b> violations have an important amount of passed with conditions (if a severe violation occurs, the facility gets a passed with conditions if this violations is corrected - this is our second cluster). Finally, the <b>critical</b> violations have a proportion of failed inspections above 70% - our third cluster.
+
+                        We applied the same type of clustering for the second part of the data set containing the inspections following 7/1/2018:<br>
+
+                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~hannaj/39.embed" height="525" width="100%"></iframe><br>
+
+                        For the second part of the data set, the clustering is less obvious: we observed a serous decay in the proportion of passed violations. We tried to cluster the violations in 2, 3 and 4 clusters, but there is always a cluster containing only 2 violations. Therefore, we decided to stick with 2 clusters.<br>
+
+                        We identified the same patterns as before, the most critical violations include real dangers to the customers' health: presence of rodents (38), handling of toxic substances (28), temperature control (33), water source (31), cooking conditions (34).<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">How are different risk levels localised across the map of Chicago?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        As the data file contains the latitude and longitude for a large majority of the facilities inspected, we wanted to analyse the localisation of the different risk levels.<br>
+
+                        <img src="img/map.png" class="img-responsive img-centered" width="80%" height="80%"><br>
+
+                        The map above shows that food establishments with low and medium risk tend to cluster together, especially towards the central parts of the city. This indicates perhaps establishments located in richer areas, which naturally will have more funds to allow for maintaining a better quality of the overall services and locations which they provide.<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">How do the inspections outcomes results vary over the years?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        We also enquired whether there exist significant changes over the years in the distribution of inspections results.<br>
+
+                        ** INSERT FIGURE **<br>
+                        
+                        A change in the results occurs between 2017 and 2018: less Pass and more Pass with conditions. It is linked to the change in the violations code in July 2018, and the inspections seem to have also become stricter since then.<br>
+
+                    </div><br>
+
+                    <h4 class="section-subheading">Are there any seasonal patterns affecting the inspections outcomes?<br> <br> </h4><br>
+
+                    <div class="text-corpus" align="justify">
+                        We then wondered if there exist seasonal patterns in our data, for instance, if we have a change in the proportion of Passed / Failed inspections during certain months of the year.<br>
+
+                        ** INSERT FIGURE **<br>
+                        
+                        The plot above, even though simple, illsutrates there is seasonality in the months of July, August and September. More precisely, during these months it seems that the average percentage of Pass inspections (over all years) decreases while the Fail increases. In retrospective this is reasonable, as the hot summer months tend to make it more difficult to store meat and other animal-derived incredients, avoid rodents and insects, as well as maintain a comfotable temperature for the customers. Note that we considered both Pass and Pass w/ Conditions to be a Pass.<br>
+
+                    </div><br>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+           <!--  <div class="row">
+            {% for post in site.posts %}
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
                             </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{ post.title }}</h4>
+                        <p class="text-muted">{{ post.subtitle }}</p>
+                    </div>
                 </div>
+            {% endfor %} -->
             </div>
         </div>
     </section>
