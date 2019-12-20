@@ -24,40 +24,40 @@
 
                     The conclusion we arrived at is that, in order to optimize a final predictive model, we should combine all the advantages of the previous models. Moreover, it is indeed possible to predict which food establishments are likely to fail an inspection. This is great news, given that our most important goal was to discover whether such predictive models can be trained on the Chicago Food Inspections data set in order to aid the relatively few inspectors to more effectively and efficiently locate the facilities that truly pose a threat to the Public Health.</div><br><br>
 
-                    <h4 class="section-subheading">Is it possible to generalize our model to other similar datasets from other cities?<br> <br> </h4><br>
+                    <h4 class="section-subheading">Is it possible to generalise our model to other similar datasets from other cities?<br> <br> </h4><br>
 
-                    Since our model seemed to be working very well on the Chicago dataset, we decided to try to generalise it. For this, we picked a dataset that is similar to ours: Boston's food inspection. In this new dataset, we tested our model with the violation description and the inspector's comments. Unfortunately, it did not performe as expected. The overall <b>accuracy</b> acheived was around <b>44%</b>. To figure out the reason behind this poor performance, we extracted and plotted the top 10 TF-IDF features for each class (Pass and Fail) for both Boston's and Chicago's dataset.<br><br>
+                    Since our model seemed to be working very well on the Chicago dataset, we decided to try to generalise it. For this, we picked a dataset that is similar to ours: Boston's food inspection. In this new dataset, we tested our model with the violation description and the inspector's comments. Unfortunately, it did not perform as expected. The overall <b>accuracy</b> achieved was around <b>44%</b>. To figure out the reason behind this poor performance, we extracted and plotted the top 10 TF-IDF features for each class (Pass and Fail) for both Boston's and Chicago's dataset.<br><br>
 
                     <div class="column"><img src="img/top-tf-idf-chicago.png" width="50%"><img src="img/top-tf-idf-boston.png" width="50%"></div><br><br>
 
 
-                    The first observation is that the features extracted from the two datasets are very different for the same class. This is one of the explanation behind the poor predictions. Another observation is regarding the two classes for the Boston dataset: the TF-IDF features are very similar. It seems like the comment section of this dataset doesnt have meaningful information regarding the outcome of the ispections. 
+                    The first observation is that the features extracted from the two datasets are very different for the same class. This is one of the explanations behind the poor predictions. Another observation is regarding the two classes for the Boston dataset: the TF-IDF features are very similar. It seems like the comment section of this dataset doesn't have meaningful information regarding the outcome of the inspections. 
 
-                    In conclusion, the generalisation of our model wouldnt work unless the inspections' comments (description of the violations) become more or less unified across cities.<br><br>
+                    In conclusion, the generalisation of our model wouldn't work unless the inspections' comments (description of the violations) become more or less unified across cities.<br><br>
 
 
                     <h4 class="section-subheading">How can we improve further the Chicago food inspections system?<br> <br> </h4><br>
 
-                    In order to improve the existing inspection system, we thought it would be interesting to prioritize inspection. The food establishments that should be inspected first are the ones which are the more likely to have a critical violation. Indeed, critical violations include violations that may jeopardize the health of customers because they imper food safety. As a result, the establishments that should be inspected first are the ones which have the highest probability of having a critical violation based on their previous inspections. For now, 27% of the inspections are found to have a critical violation. By finding them earlier, we can improve the system and maybe prevent them from happening.<br><br>
+                    In order to improve the existing inspection system, we thought it would be interesting to prioritize inspection. The food establishments that should be inspected first are the ones that are the more likely to have a critical violation. Indeed, critical violations include violations that may jeopardize the health of customers because they impede food safety. As a result, the establishments that should be inspected first are the ones which have the highest probability of having a critical violation based on their previous inspections. For now, 27% of the inspections are found to have a critical violation. By finding them earlier, we can improve the system and maybe prevent them from happening.<br><br>
 
                     <div class="column"><img src="img/clustering-1.png" width="50%"><img src="img/clustering-2.png" width="50%"></div><br>
 
                     To prioritize inspections, one feature that could help our prediction model is to determine if an establishment previously had critical violations and more generally, the category of its previous violations. For now, the clustering is divided into 3 categories before the change in violations and 2 categories after which might have a negative effect on the model. In order to have the same number of categories before and after the change in violations, we need to change a bit the existing clustering. One way to obtain 3 categories is to map Pass and Pass w/conditions together.<br><br>
 
-                    The critical violations identified have a high pourcentage of failed inspections and a low one of successful inspections. Besides, they are associated with factors that can endanger customers.<br><br>
+                    The critical violations identified have a high percentage of failed inspections and a low one of successful inspections. Besides, they are associated with factors that can endanger customers.<br><br>
 
                     <ul>Here are the features included in our model to predict critical violations:
                         <li>Number of critical/serious/normal violations last time</li>
-                        <li>Result of last inspection</li>
+                        <li>Result of the last inspection</li>
                         <li>Number of violations last time</li>
-                        <li>Number of days since last inspection</li>
+                        <li>Number of days since the last inspection</li>
                         <li>Risk last time</li>
                         <li>Number of days the establishment has been operating</li>
                     </ul><br><br>
 
                     <img src="img/priority-distribution-model.png" class="img-responsive img-centered" width="70%"><br><br>
 
-                    Our model has a 77% accuracy. We can create a function which predict which establisments are to be inspected first at a given date based on their probability of having a critical violation. The above plot is an exemple for a random date. The yellow dots correspond to the establisments that need to be inspected in priority whereas as we go towards more violet points, we can assume that these establishments can be inspected later since they are less likely to get a critical violation.
+                    Our model has a 77% accuracy. We can create a function which predicts which establishments are to be inspected first at a given date based on their probability of having a critical violation. The above plot is an example for a random date. The yellow dots correspond to the establishments that need to be inspected in priority whereas as we go towards more violet points, we can assume that these establishments can be inspected later since they are less likely to get a critical violation.
 
 
                 </div>
